@@ -2,10 +2,7 @@ package de.uni_bayreuth.se.demo.controller;
 
 import de.uni_bayreuth.se.demo.model.Coffee;
 import de.uni_bayreuth.se.demo.service.CoffeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ import java.util.List;
 @RequestMapping("/api/coffee")
 public class CoffeeController {
 
-    private final CoffeeService coffeeService;
+    private CoffeeService coffeeService;
 
     public CoffeeController(CoffeeService coffeeService) {
         this.coffeeService = coffeeService;
@@ -32,5 +29,11 @@ public class CoffeeController {
     @GetMapping("/accessible")
     public List<Coffee> getAccessibleCoffees() {
         return coffeeService.getAccessibleCoffees();
+    }
+
+    @PutMapping("/{name}")
+    public Coffee updateCoffeeByName(@PathVariable String name,
+                                     @RequestBody Coffee updatedCoffee) {
+        return coffeeService.updateCoffeeByName(name, updatedCoffee);
     }
 }

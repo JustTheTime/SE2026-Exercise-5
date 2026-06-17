@@ -27,4 +27,21 @@ public class CoffeeService {
     public List<Coffee> getAccessibleCoffees() {
         return coffeeRepository.findAccessible();
     }
+
+    public Coffee updateCoffeeByName(String name, Coffee updatedCoffee) {
+        // NEU für Aufgabe 4: Manuelle Validierung ohne neue Imports
+        if (updatedCoffee.name() == null || updatedCoffee.name().trim().isEmpty()) {
+            throw new IllegalArgumentException("Der Name darf nicht leer sein.");
+        }
+        if (updatedCoffee.price() <= 0) {
+            throw new IllegalArgumentException("Der Preis muss größer als 0 sein.");
+        }
+
+        // Prüfen, ob der Kaffee überhaupt existiert
+        Coffee existing = coffeeRepository.findByName(name)
+                .orElseThrow(() -> new IllegalArgumentException("Coffee konnte nicht geupdatet werden: " + name));
+
+        // Das Update im Repository ausführen
+        return coffeeRepository.update(name, updatedCoffee);
+    }
 }

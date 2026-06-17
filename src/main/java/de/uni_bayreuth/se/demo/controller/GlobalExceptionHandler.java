@@ -11,7 +11,8 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    // Geändert von NOT_FOUND auf BAD_REQUEST für Aufgabe 5
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleIllegalArgumentException(IllegalArgumentException ex) {
         return Map.of("error", ex.getMessage());
     }

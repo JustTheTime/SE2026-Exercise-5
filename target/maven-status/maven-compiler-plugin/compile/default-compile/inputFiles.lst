@@ -1,0 +1,6 @@
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/DemoApplication.java
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/controller/CoffeeController.java
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/controller/GlobalExceptionHandler.java
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/model/Coffee.java
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/repository/CoffeeRepository.java
+/Users/justusalexander/SE2026/SE2026-Exercise-5/src/main/java/de/uni_bayreuth/se/demo/service/CoffeeService.java
